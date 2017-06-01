@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        initialSetup()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,25 +40,34 @@ class ViewController: UIViewController {
             print("This is the first launch of the app")
             print("Setting up value for key 'isNightMode'...")
             UserDefaults.standard.set(false, forKey: "isNightMode")
-            print("The value for isNightMode is set")
+            print("The value for isNightMode is set go false")
         }
     }
     
     func switchMode(isNightMode: Bool) -> Void {
         if isNightMode {
-            mainView.backgroundColor = .black
+            
+            mainView.backgroundColor = .darkGray
+            print("Main view background color is set to dark grey")
         } else {
             mainView.backgroundColor = .white
+            print("Main view background color is set to white")
         }
     }
     
     @IBAction func switchFlipped(_ sender: Any) {
         if nightModeSwitch.isOn {
+            print("Switching mode ...")
             switchMode(isNightMode: true)
+            print("Setting up value for key 'isNightMode'...")
             UserDefaults.standard.set(true, forKey: "isNightMode")
+            print("The value for isNightMode is set to 'true'")
         } else {
+            print("Switching mode ...")
             switchMode(isNightMode: false)
+            print("Setting up value for key 'isNightMode'...")
             UserDefaults.standard.set(false, forKey: "isNightMode")
+            print("The value for isNightMode is set to 'false'")
         }
     }
     
