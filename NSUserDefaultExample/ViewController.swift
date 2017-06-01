@@ -35,12 +35,6 @@ class ViewController: UIViewController {
                 switchMode(isNightMode: false)
                 print("Night mode is off")
             }
-            
-        } else {
-            print("This is the first launch of the app")
-            print("Setting up value for key 'isNightMode'...")
-            UserDefaults.standard.set(false, forKey: "isNightMode")
-            print("The value for isNightMode is set go false")
         }
     }
     
